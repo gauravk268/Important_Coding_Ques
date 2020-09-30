@@ -1,0 +1,21 @@
+int Solution::minimize(const vector<int> &A, const vector<int> &B, const vector<int> &C) {
+    int m = A.size();
+    int n = B.size();
+    int o = C.size();
+    
+    int i=0,j=0,k=0;
+    int res=INT_MAX;
+    while(i<m && j<n && k<o){
+        int x = abs(A[i]-B[j]);
+        int y = abs(B[j]-C[k]);
+        int z = abs(C[k]-A[i]);
+        int temp = max(max(x,y),z);
+        res = min(res,temp);
+        if(res ==0 )    return res;
+        int tem = min(min(A[i],B[j]),C[k]);
+        if(tem == A[i]) i++;
+        if(tem == B[j]) j++;
+        if(tem == C[k]) k++;
+    }
+    return res;
+}
