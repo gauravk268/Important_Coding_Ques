@@ -1,0 +1,29 @@
+void Solution::merge(vector<int> &A, vector<int> &B) {
+    // Do not write main() function.
+    // Do not read input, instead use the arguments to the function.
+    // Do not print the output, instead return values as specified
+    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
+    vector<int> res;
+    int a = 0, b = 0;
+    while(a<A.size() || b<B.size()){
+        if(a<A.size() && b<B.size()){
+            if(A[a]<B[b]){
+                res.push_back(A[a]);
+                a++;
+            }else{
+                res.push_back(B[b]);
+                b++;
+            }
+        }else if(a<A.size()){
+            res.push_back(A[a]);
+            a++;
+        }else{
+            res.push_back(B[b]);
+            b++;
+        }
+    }
+    A.resize(res.size());
+    for(int i = 0; i<res.size(); i++){
+        A[i] = res[i];
+        }
+}
