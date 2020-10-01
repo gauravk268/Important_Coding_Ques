@@ -1,2 +1,2 @@
-# Important Coding Questions
-Solutions for all the must-do interview quetions
+# Important Coding Questions 
+Solutions for all the must-do interview quetions.
